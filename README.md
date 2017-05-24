@@ -2,7 +2,7 @@
 
 [Project Web site](https://rich0423.github.io/spring-dropwizard-metrics/)
 
-The project is base on Spring Boot, that show how to measure your application and report metrics data into elasticsearch.
+The project show how to measure your Spring application and report metrics data into elasticsearch.
 
 spring-dropwizard-metrics integrates Dropwizard Metrics library with metrics-spring module, and Metrics Elasticsearch Reporter.
 
