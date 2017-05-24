@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+## spring-dropwizard-metrics
 
-You can use the [editor on GitHub](https://github.com/RICH0423/spring-dropwizard-metrics/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+[Project Web site](https://rich0423.github.io/spring-dropwizard-metrics/)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+The project is base on Spring Boot, that show how to measure your application and report metrics data into elasticsearch.
 
-### Markdown
+spring-dropwizard-metrics integrates Dropwizard Metrics library with metrics-spring module, and Metrics Elasticsearch Reporter.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+---
 
-```markdown
-Syntax highlighted code block
+### Dependency library
+spring-dropwizard-metrics integrates Dropwizard Metrics library with metrics-spring module, and Metrics Elasticsearch Reporter.
 
-# Header 1
-## Header 2
-### Header 3
+* [Dropwizard Metrics](http://metrics.dropwizard.io/)
+* [metrics-spring](http://metrics.ryantenney.com/)
+* [Metrics Elasticsearch Reporter](https://github.com/elastic/elasticsearch-metrics-reporter-java)
 
-- Bulleted
-- List
+### Elasticsearch Configuration
+You can config your Elasticsearch host and index information from `application.yml`.
 
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```yaml
+elasticsearch.reporter:
+  hosts: 
+    - localhost:9200
+  index: dropwizard
+  indexDateFormat: yyyy.MM.dd
+  frequency: 60s
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### Build and run 
+You must start the [Elasticsearch](https://www.elastic.co/) before executing the program
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/RICH0423/spring-dropwizard-metrics/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+Build the project and execute JAR
+```bash
+./gradlew clean build && java -jar build/libs/spring-dropwizard-metirc-0.0.1.jar
+```
