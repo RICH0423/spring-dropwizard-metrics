@@ -32,5 +32,5 @@ You must start the [Elasticsearch](https://www.elastic.co/) before executing the
 
 Build the project and execute JAR
 ```bash
-./gradlew clean build && java -jar build/libs/spring-dropwizard-metirc-0.0.1.jar
+./gradlew clean build && java -jar build/libs/spring-dropwizard-metrics-0.0.1.jar
 ```
